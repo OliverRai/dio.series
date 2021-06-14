@@ -1,5 +1,6 @@
 using System.Collections.Generic;
-namespace Series
+
+namespace Series.Interfaces
 {
     public interface iRepositorio<T>
     {
@@ -7,7 +8,7 @@ namespace Series
         T RetornaPorId(int id);
         void Insere(T entidade);
         void Exclui(int id);
-        void Atualiza(int id);
+        void Atualiza(int id, T entidade);
         int ProximoId();
 
     }

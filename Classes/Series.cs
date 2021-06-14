@@ -3,11 +3,8 @@ namespace Series
     public class Series : EntidadeBase
     {
         private Genero Genero {get; set;}
-
         private string Titulo {get; set;}
-
         private string Descricao {get; set;}
-
         private int Ano {get; set;}
     
         public Series(int id, Genero genero, string titulo, string descricao, int ano)
@@ -18,7 +15,6 @@ namespace Series
             this.Descricao = descricao;
             this.Ano = ano;
         }
-
         public override string ToString()
         {
             string retorno = "";
@@ -28,12 +24,10 @@ namespace Series
             retorno += "Ano: " + this.Ano;
             return retorno;
         }
-
         public string retornaTitulo()
         {
             return this.Titulo;
         }
-
         public int retornaId()
         {
             return this.Id;
