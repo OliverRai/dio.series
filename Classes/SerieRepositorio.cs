@@ -6,34 +6,35 @@ namespace Series
 {
     public class SerieRepositorio : iRepositorio<Series>
     {
-        public void Atualiza(int id, Series entidade)
+        private List<Series> listaSeries = new List<Series>();
+        public void Atualiza(int id, Series objetoEntidade)
         {
-            throw new NotImplementedException();
+            listaSeries[id] = objetoEntidade;
         }
 
         public void Exclui(int id)
         {
-            throw new NotImplementedException();
+            listaSeries[id].Exclui();
         }
 
-        public void Insere(Series entidade)
+        public void Insere(Series objetoEntidade)
         {
-            throw new NotImplementedException();
+            listaSeries.Add(objetoEntidade);
         }
 
         public List<Series> Lista()
         {
-            throw new NotImplementedException();
+            return listaSeries;
         }
 
         public int ProximoId()
         {
-            throw new NotImplementedException();
+            return listaSeries.Count;
         }
 
         public Series RetornaPorId(int id)
         {
-           throw new NotImplementedException(); 
+           return listaSeries[id]; 
         }
     }
 }
