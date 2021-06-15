@@ -53,28 +53,30 @@ namespace Series
         private static void InserirSerie()
         {
             Console.WriteLine("Inserir nova série");
-            foreach(int i in Enum.GetValues(typeof(Genero)))
-            {
-                Console.WriteLine("{0}.{1}", i, Enum.GetName(typeof(Genero), i));
-            }
-            Console.Write("Digite o gênero entre as opções acima: ");
-            int entradaGenero = int.Parse(Console.ReadLine());
-            Console.Write("Digite o Título da série: ");
-            string entradaTitulo = Console.ReadLine();
-            Console.Write("Digite o Ano de inicio da série: ");
-            int entradaAno = int.Parse(Console.ReadLine());
-            Console.Write("Digite a descrição da série: ");
-            string entradaDescricao = Console.ReadLine();
 
-            Series novaSerie = new Series
-            (
-                id: repositorio.ProximoId(),
-                genero: (Genero)entradaGenero,
-                titulo: entradaTitulo,
-                ano: entradaAno,
-                descricao: entradaDescricao
-            );
-            repositorio.Insere(novaSerie);
+			foreach (int i in Enum.GetValues(typeof(Genero)))
+			{
+				Console.WriteLine("{0}-{1}", i, Enum.GetName(typeof(Genero), i));
+			}
+			Console.Write("Digite o gênero entre as opções acima: ");
+			int entradaGenero = int.Parse(Console.ReadLine());
+
+			Console.Write("Digite o Título da Série: ");
+			string entradaTitulo = Console.ReadLine();
+
+			Console.Write("Digite o Ano de Início da Série: ");
+			int entradaAno = int.Parse(Console.ReadLine());
+
+			Console.Write("Digite a Descrição da Série: ");
+			string entradaDescricao = Console.ReadLine();
+
+			Series novaSerie = new Series(id: repositorio.ProximoId(),
+										genero: (Genero)entradaGenero,
+										titulo: entradaTitulo,
+										ano: entradaAno,
+										descricao: entradaDescricao);
+
+			repositorio.Insere(novaSerie);
         }
         private static void AtualizarSerie()
         {
@@ -127,19 +129,21 @@ namespace Series
         private static string ObterOpcaoUsuario()
         {
             Console.WriteLine();
-            Console.WriteLine("Series para você!");
-            Console.WriteLine("Informe a opção desejada: ");
-            Console.WriteLine("1 - Listar Séries");
-            Console.WriteLine("2 - Inserir Nova Série");
-            Console.WriteLine("3 - Atualziar Série");
-            Console.WriteLine("4 - Excluir Série");
-            Console.WriteLine("5 - Visualizar Série");
-            Console.WriteLine("C - Limpar Tela");
-            Console.WriteLine("X - Sair");  
-            
-            string opcaoUsuario = Console.ReadLine().ToUpper();
-            Console.WriteLine();
-            return opcaoUsuario;
+			Console.WriteLine("DIO Séries a seu dispor!!!");
+			Console.WriteLine("Informe a opção desejada:");
+
+			Console.WriteLine("1- Listar séries");
+			Console.WriteLine("2- Inserir nova série");
+			Console.WriteLine("3- Atualizar série");
+			Console.WriteLine("4- Excluir série");
+			Console.WriteLine("5- Visualizar série");
+			Console.WriteLine("C- Limpar Tela");
+			Console.WriteLine("X- Sair");
+			Console.WriteLine();
+
+			string opcaoUsuario = Console.ReadLine().ToUpper();
+			Console.WriteLine();
+			return opcaoUsuario;
         }
     }
 }
