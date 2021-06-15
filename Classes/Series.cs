@@ -24,6 +24,7 @@ namespace Series
             retorno += "Título: " + this.Titulo;
             retorno += "Descrição: " + this.Descricao;
             retorno += "Ano: " + this.Ano;
+            retorno += "Excluído: " + this.Excluido;
             return retorno;
         }
         public string retornaTitulo()
